@@ -5,35 +5,29 @@ using UnityEngine.Serialization;
 
 public class InteractableSecuredDoor : InteractableDoor {
 
-    public GadgetDrill drillPrefab;
-    GadgetDrill _actualDrill;
+    public DrillSystem drillSystem;
 
-    [FormerlySerializedAs("drilled")] public bool unlocked;
-
-    public int drillTime = 120;
-
-    public bool Drilling() {
-        return _actualDrill != null;
-    }
+    public bool unlocked;
 
     public override void OnInteract(InventoryHandler inv, string[] parameter)
     {
+        if (parameter.Length > 2)
+        {
+            bool unlock = bool.Parse(parameter[2]);
+            if (unlock)
+                unlocked = true;
+        }
         if (!unlocked)
         {
             var c = new CollectibleData("Keycard");
-            if (inv.HasCollectible(c))
+            if (inv != null && inv.HasCollectible(c))
             {
-                base.OnInteract(inv, parameter);
                 inv.RemoveCollectible(c);
                 unlocked = true;
             }
             else
             {
-                var a = Instantiate(drillPrefab.gameObject, transform.position, Quaternion.identity, transform);
-                var dr = a.GetComponent<GadgetDrill>();
-                dr.transform.localRotation = Quaternion.identity;
-                _actualDrill = dr;
-                dr.SetRemainingTime(this, drillTime);
+                drillSystem.SpawnDrill(this);
             }
         }
 
@@ -45,7 +39,7 @@ public class InteractableSecuredDoor : InteractableDoor {
 
     public override bool CanInteract(InventoryHandler inv)
     {
-        return _actualDrill == null;
+        return !drillSystem.Drilling();
     }
 
     public override bool CanHover(InventoryHandler inv)

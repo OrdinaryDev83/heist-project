@@ -5,16 +5,16 @@ using UnityEngine.Serialization;
 
 public class GadgetDrill : GadgetBase {
 
-    InteractableSecuredDoor _door;
+    IInteractable _interactable;
     [FormerlySerializedAs("_jamCurve")] [SerializeField]
     private AnimationCurve jamCurve;
     [FormerlySerializedAs("_spriteRenderer")] [SerializeField]
     SpriteRenderer spriteRenderer;
 
-    public void SetRemainingTime(InteractableSecuredDoor door, int remainingTime) {
+    public void SetRemainingTime(IInteractable interactable, int remainingTime) {
         this.remainingSecs = remainingTime;
         this.maxSecs = remainingTime;
-        this._door = door;
+        this._interactable = interactable;
         int r = Mathf.FloorToInt(jamCurve.Evaluate(Random.Range(0f, 1f)));
         _maxJam = Mathf.CeilToInt(r * ((remainingTime + 1) / 60f));
         _jammed = false;
@@ -69,7 +69,8 @@ public class GadgetDrill : GadgetBase {
                 _cooldown = 1f;
             }
         } else if (remainingSecs <= 0) {
-            if (_door) {
+            if (_interactable != null)
+            {
                 OnDrillFinished();
             }
             _cooldown = 0f;
@@ -90,8 +91,7 @@ public class GadgetDrill : GadgetBase {
     }
 
     protected virtual void OnDrillFinished() {
-        _door.unlocked = true;
-        _door.OnInteract(null, new string[] { transform.position.x.ToString(), transform.position.y.ToString() });
+        _interactable.OnInteract(null, new string[] { transform.position.x.ToString(), transform.position.y.ToString(), "true" });
         Destroy(gameObject);
     }
 

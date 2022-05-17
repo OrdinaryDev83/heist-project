@@ -111,6 +111,36 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5936781716383455249, guid: 0708bf3b2a7b2f44eb2b15cc8c6e5c20, type: 3}
   m_PrefabInstance: {fileID: 6680131547052311393}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &107676770838319581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069384715120597872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de0f2ba67106f04a89ed993f455de95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drillTime: 120
+  drillPrefab: {fileID: 6004341630822221257, guid: c742474a0b08d974eac7083a5dc89c29, type: 3}
+--- !u!114 &2249665373616690942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069384715120597872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 183748dd497aa473a98ff0cd8cb67fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 2149399251832666526
+  updateError: 1
+  checkTime: 1
 --- !u!114 &6680131546671335513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +156,5 @@ MonoBehaviour:
   interactionTime: 0
   openedLabel: Close Secured Door
   closedLabel: Open Secured Door
-  drillPrefab: {fileID: 6004341630822221257, guid: c742474a0b08d974eac7083a5dc89c29, type: 3}
-  drilled: 0
-  drillTime: 60
+  drillSystem: {fileID: 107676770838319581}
+  unlocked: 0
