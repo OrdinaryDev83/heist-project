@@ -47,6 +47,11 @@ public class InventoryHandler : MonoBehaviour
         }
     }
 
+    public void Reload()
+    {
+        firearms[selected].TryReload();
+    }
+    
     public void UseItem() {
         if (firearms.Length == 0) return;
         if (selected < 2) {

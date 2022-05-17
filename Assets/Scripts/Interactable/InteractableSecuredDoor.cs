@@ -4,8 +4,15 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class InteractableSecuredDoor : InteractableDoor {
+    
+    [SerializeField]
+    protected IDrillSystem drillSystem;
 
-    public DrillSystem drillSystem;
+    protected override void Start()
+    {
+        base.Start();
+        drillSystem = GetComponent<IDrillSystem>();
+    }
 
     public bool unlocked;
 

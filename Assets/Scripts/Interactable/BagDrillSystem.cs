@@ -15,8 +15,15 @@ public class BagDrillSystem : MonoBehaviour, IDrillSystem
         return _actualDrill != null;
     }
 
+    public bool HasDrillBagDropped()
+    {
+        return drillBag != null;
+    }
+
     public void SpawnDrill(IInteractable interactable)
     {
+        if (!HasDrillBagDropped())
+            return;
         var a = Instantiate(drillPrefab.gameObject, transform.position, Quaternion.identity, transform);
         var dr = a.GetComponent<GadgetDrill>();
         dr.transform.localRotation = Quaternion.identity;
@@ -39,7 +46,7 @@ public class BagDrillSystem : MonoBehaviour, IDrillSystem
         BagBase c;
         if(collision.TryGetComponent(out c) && drillBag != null && c.containing.label == "Heavy Drill")
         {
-            c = null;
+            drillBag = null;
         }
     }
 }

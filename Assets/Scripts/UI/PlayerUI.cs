@@ -31,6 +31,8 @@ public class PlayerUI : MonoBehaviour
     public MPImage assaultStateImage;
     public TextMeshProUGUI assaultStateText;
 
+    public TextMeshProUGUI moneyText;
+
     private void Start()
     {
         PlayersManager.OnPlayerSpawned += OnPlayerSpawned;
@@ -63,6 +65,7 @@ public class PlayerUI : MonoBehaviour
             ammoCount.text = string.Concat(b, "/", a, "/", c);
         }
         objectiveText.text = string.Concat("Objective : ", ObjectiveManager.I.GetCurrentObj().label);
+        moneyText.text = string.Concat(PlayersManager.QuickMoney.ToString(), "$");
     }
 
     public void SetInteractionText(Vector3 pos, string text) {

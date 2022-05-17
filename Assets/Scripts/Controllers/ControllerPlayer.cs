@@ -8,11 +8,13 @@ public class ControllerPlayer : ControllerBase
 {
     private Camera _cam;
     private PlayerUI _ui;
+    private InventoryHandler _inv;
     protected override void Start()
     {
         base.Start();
         _cam = CameraController.I.cam;
         _ui = PlayerUI.I;
+        _inv = GetComponent<InventoryHandler>();
     }
 
     public float interactionMaxDistance = 2f;
@@ -26,13 +28,21 @@ public class ControllerPlayer : ControllerBase
 
         UpdateItemUse();
         UpdateItemSwitch();
-        UpdateThrowBag();
-        UpdateGadgetDeploy();
+        if (_inv.bag)
+        {
+            UpdateThrowBag();
+        }
+        else
+        {
+            UpdateGadgetDeploy();
+        }
 
         MoveEntity(GetAxisRaw());
 
         UpdateInteractionHover();
         UpdateInteractionButton();
+
+        UpdateReloadWeapon();
     }
 
     #region Inputs
@@ -54,6 +64,11 @@ public class ControllerPlayer : ControllerBase
     bool ThrowButtonDown()
     {
         return Input.GetKeyDown(KeyCode.G);
+    }
+    
+    bool ReloadButtonDown()
+    {
+        return Input.GetKeyDown(KeyCode.R);
     }
 
     bool UseButton()
@@ -118,6 +133,12 @@ public class ControllerPlayer : ControllerBase
         if (!ThrowButton()) return;
         var dir = MousePosition() - (Vector2)transform.position;
         Inv.ThrowBag(dir, Inv.throwForce);
+    }
+
+    private void UpdateReloadWeapon()
+    {
+        if (!ReloadButtonDown()) return;
+            Inv.Reload();
     }
 
     private void UpdateGadgetDeploy()

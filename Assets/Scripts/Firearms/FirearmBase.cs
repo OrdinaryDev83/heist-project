@@ -97,13 +97,13 @@ public class FirearmBase : MonoBehaviour {
                 if (!d.collider.isTrigger) {
                     hit = d;
                     HealthHandler h = null;
-                    if (hit.collider.TryGetComponent<HealthHandler>(out h)) {
+                    if (hit.collider.TryGetComponent(out h)) {
                         h.Damage(damage);
                         ApplyPower(hit.collider.gameObject);
 
                     } else {
                         Transform p = hit.collider.transform.parent;
-                        if (p != null && p.TryGetComponent<HealthHandler>(out h)) {
+                        if (p != null && p.TryGetComponent(out h)) {
                             h.Damage(damage);
                             ApplyPower(hit.collider.transform.parent.gameObject);
                         }

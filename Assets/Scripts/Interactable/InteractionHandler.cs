@@ -12,9 +12,10 @@ public class InteractionHandler : MonoBehaviour {
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, dir.normalized, maxDist, mask);
         foreach (var hit in hits) {
             IInteractable ib = null;
-            if(hit.collider.TryGetComponent(out ib)) {
+            if(hit.collider.TryGetComponent(out ib))
                 return ib;
-            }
+            if (!hit.collider.isTrigger)
+                return null;
         }
         return null;
     }

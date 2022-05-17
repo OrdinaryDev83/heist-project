@@ -8,6 +8,14 @@ public class PlayersManager : MonoBehaviour
 
     public Transform[] spawnpoints;
 
+    private static int _quickMoney;
+
+    public static int QuickMoney
+    {
+        set => _quickMoney = value;
+        get => _quickMoney;
+    }
+
     public delegate void OnPlayerSpawnedDelegate(Transform player);
     public static OnPlayerSpawnedDelegate OnPlayerSpawned;
 
@@ -17,5 +25,10 @@ public class PlayersManager : MonoBehaviour
         int r = Random.Range(0, spawnpoints.Length);
         var player = Instantiate(playerPrefab, spawnpoints[r].position, Quaternion.identity, transform);
         OnPlayerSpawned?.Invoke(player.transform);
+    }
+    
+    public static void AddQuickMoney(int amount)
+    {
+        QuickMoney += amount;
     }
 }

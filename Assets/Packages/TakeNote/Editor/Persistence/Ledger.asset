@@ -13,48 +13,6 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
-  - Title: More Interactables
-    CreationDate: 08/05/2022 | 14:12
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-small vault
-
-      -vault door
-
-      -drills (jammed)
-
-      -jewelry
-
-      -display
-      case
-
-      -counter money'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.99215686, g: 0.5076181, b: 0.49803922, a: 1}
-  - Title: More Enemies
-    CreationDate: 08/05/2022 | 14:13
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-simple cop
-
-      -swat unit
-
-      -guard'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.99215686, g: 0.9497984, b: 0.49803922, a: 1}
-  - Title: Better Test Map
-    CreationDate: 08/05/2022 | 14:14
-    CompletionDate: 
-    HasDetails: 1
-    Details: -like the jewelry store in PD2
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.49803922, g: 0.6898047, b: 0.99215686, a: 1}
   - Title: Improve Rigidbody Movement
     CreationDate: 08/05/2022 | 14:15
     CompletionDate: 
@@ -66,44 +24,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.49803922, g: 0.6898047, b: 0.99215686, a: 1}
-  - Title: Fog Of War
-    CreationDate: 08/05/2022 | 14:16
+  - Title: Fix Bag Raycast
+    CreationDate: 17/05/2022 | 18:42
     CompletionDate: 
     HasDetails: 1
-    Details: -can't see enemies
+    Details: -only works if we aim at the first part of the bag's body
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.49803922, g: 0.99215686, b: 0.9531291, a: 1}
-  - Title: Civilians
-    CreationDate: 08/05/2022 | 14:20
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-ability to kill them
-
-      -hostage them
-
-      -move them
-
-      -cops
-      free them'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.99215686, g: 0.49803922, b: 0.8547083, a: 1}
-  - Title: User Account
-    CreationDate: 08/05/2022 | 14:29
-    CompletionDate: 
-    HasDetails: 1
-    Details: '-store username
-
-      -money
-
-      -loadouts'
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.99215686, g: 0.694904, b: 0.49803922, a: 1}
+    DrawColor: {r: 0.27843136, g: 0.5767961, b: 0.78431374, a: 1}
   - Title: Game Cycles
     CreationDate: 08/05/2022 | 14:18
     CompletionDate: 
@@ -134,15 +63,86 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.86274517, g: 0.49803925, b: 0.9921569, a: 1}
-  - Title: Generic Drop Zone
-    CreationDate: 17/05/2022 | 16:23
+  - Title: Critical Damages
+    CreationDate: 17/05/2022 | 18:39
     CompletionDate: 
-    HasDetails: 0
-    Details: 
+    HasDetails: 1
+    Details: -chance of doing a headshot (15%)
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
-    DrawColor: {r: 0.6333985, g: 0.8301887, b: 0.2871721, a: 1}
+    DrawColor: {r: 0.8962264, g: 0.43588477, b: 0.2240566, a: 1}
+  - Title: Fog Of War
+    CreationDate: 08/05/2022 | 14:16
+    CompletionDate: 
+    HasDetails: 1
+    Details: -can't see enemies
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.49803922, g: 0.99215686, b: 0.9531291, a: 1}
+  - Title: ATMs
+    CreationDate: 17/05/2022 | 18:41
+    CompletionDate: 
+    HasDetails: 1
+    Details: -sawed
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.2770114, g: 0.7830189, b: 0.54484004, a: 1}
+  - Title: User Account
+    CreationDate: 08/05/2022 | 14:29
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-store username
+
+      -money
+
+      -loadouts'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.99215686, g: 0.694904, b: 0.49803922, a: 1}
+  - Title: More Weapons
+    CreationDate: 17/05/2022 | 18:39
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-revolver
+
+      -saw
+
+      -grenades
+
+      -melee'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
+  - Title: Civilians
+    CreationDate: 08/05/2022 | 14:20
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-ability to kill them
+
+      -hostage them
+
+      -move them
+
+      -cops
+      free them'
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.99215686, g: 0.49803922, b: 0.8547083, a: 1}
+  - Title: Better Test Map
+    CreationDate: 08/05/2022 | 14:14
+    CompletionDate: 
+    HasDetails: 1
+    Details: -like the jewelry store in PD2
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.49803922, g: 0.6898047, b: 0.99215686, a: 1}
   CompletedTasks:
   - Title: Gadget Inventory
     CreationDate: 08/05/2022 | 14:09
@@ -164,6 +164,48 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.4999555, g: 0.990566, b: 0.5388036, a: 1}
+  - Title: More Interactables
+    CreationDate: 08/05/2022 | 14:12
+    CompletionDate: 17/05/2022 | 18:07
+    HasDetails: 1
+    Details: '-small vault
+
+      -vault door
+
+      -drills (jammed)
+
+      -jewelry
+
+      -display
+      case
+
+      -counter money'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.99215686, g: 0.5076181, b: 0.49803922, a: 1}
+  - Title: More Enemies
+    CreationDate: 08/05/2022 | 14:13
+    CompletionDate: 17/05/2022 | 18:49
+    HasDetails: 1
+    Details: '-simple cop
+
+      -swat unit
+
+      -guard'
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.99215686, g: 0.9497984, b: 0.49803922, a: 1}
+  - Title: Reload Button
+    CreationDate: 17/05/2022 | 19:03
+    CompletionDate: 17/05/2022 | 19:03
+    HasDetails: 1
+    Details: R
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.051886797, b: 0.051886797, a: 1}
   DeferredTasks:
   - Title: Loadout Selector
     CreationDate: 08/05/2022 | 14:19
@@ -183,3 +225,23 @@ MonoBehaviour:
     IsDeferred: 1
     IsColored: 1
     DrawColor: {r: 0.5857149, g: 0.32039872, b: 0.9056604, a: 1}
+  - Title: Generic Drop Zone
+    CreationDate: 17/05/2022 | 16:23
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 1
+    DrawColor: {r: 0.6333985, g: 0.8301887, b: 0.2871721, a: 1}
+  - Title: Fix Weird AI
+    CreationDate: 17/05/2022 | 18:08
+    CompletionDate: 
+    HasDetails: 1
+    Details: '-they keep getting stuck into walls
+
+      -stop teamkill'
+    IsCompleted: 0
+    IsDeferred: 1
+    IsColored: 0
+    DrawColor: {r: 1, g: 1, b: 1, a: 1}
