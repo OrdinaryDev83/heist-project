@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &782018344629467999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226060, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226061, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5788785536472570706, guid: c876a7e93320f534a9ead9868c53f794, type: 3}
+    - target: {fileID: 6393394097145226062, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_Name
+      value: Door Heavy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226062, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226065, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: closedLabel
+      value: Lockpick Heavy Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226065, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: openedLabel
+      value: Close Heavy Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226065, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: interactionTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226066, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226067, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393394097145226071, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feb0223b1b8d9ab47a6ac62a1f058ab8, type: 3}
