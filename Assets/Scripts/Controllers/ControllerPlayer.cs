@@ -73,12 +73,12 @@ public class ControllerPlayer : ControllerBase
     
     bool FireButton()
     {
-        return Input.GetMouseButton(0);
+        return Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space);
     }
     
     bool FireButtonDown()
     {
-        return Input.GetMouseButtonDown(0);
+        return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
     }
 
     Vector2 MousePosition()

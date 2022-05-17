@@ -8,7 +8,6 @@ public class HealthHandlerObstacle : HealthHandler {
     public BoxCollider2D box;
 
     public override void OnDeath() {
-        top.enabled = false;
-        box.enabled = false;
+        Destroy(gameObject);
     }
 }

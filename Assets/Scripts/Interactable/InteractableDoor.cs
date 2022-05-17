@@ -10,7 +10,7 @@ public class InteractableDoor : InteractableBase {
     public string closedLabel;
 
     private float _startRotZ;
-    private void Start() {
+    protected virtual void Start() {
         _coll = GetComponent<Collider2D>();
         _startRotZ = transform.eulerAngles.z;
     }

@@ -8,7 +8,7 @@ public class FirearmBase : MonoBehaviour {
     AnimationBase _anim;
     Animator _selfAnim;
 
-    new public string name;
+    public new string name;
     public enum Type {
         Pistol,
         Rifle,

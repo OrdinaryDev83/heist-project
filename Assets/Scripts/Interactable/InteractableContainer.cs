@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,27 @@ public class InteractableContainer : InteractableBase {
 
     public Valuable containing;
     public GameObject bagPrefab;
+    
+    public GameObject blockingObject;
+
+    private Collider2D coll;
+
+    private void Start()
+    {
+        if (blockingObject != null)
+        {
+            coll = GetComponent<Collider2D>();
+            coll.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (coll && !coll.enabled && blockingObject == null)
+        {
+            coll.enabled = true;
+        }
+    }
 
     public override InteractableData GetData(InventoryHandler inv) {
         return new InteractableData(inv.bag == null ? "Bag " + containing : "Already carrying a bag", interactionTime);
@@ -39,7 +61,7 @@ public class InteractableContainer : InteractableBase {
 
     public override bool CanHover(InventoryHandler inv)
     {
-        return containing.amount > 0;
+        return blockingObject == null && containing.amount > 0;
     }
 }
 

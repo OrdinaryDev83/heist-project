@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrillSystem : MonoBehaviour, IDrillSystem
+public class BagDrillSystem : MonoBehaviour, IDrillSystem
 {
     public int drillTime = 120;
     
     public GadgetDrill drillPrefab;
     GadgetDrill _actualDrill;
-    
+
     public bool Drilling()
     {
         return _actualDrill != null;
@@ -22,10 +23,23 @@ public class DrillSystem : MonoBehaviour, IDrillSystem
         _actualDrill = dr;
         dr.SetRemainingTime(interactable, drillTime);
     }
-}
+    
+    private BagBase drillBag;
 
-public interface IDrillSystem
-{
-    public bool Drilling();
-    public void SpawnDrill(IInteractable interactable);
+    public void OnTEnter(Collider2D collision)
+    {
+        BagBase c;
+        if(collision.TryGetComponent(out c) && drillBag == null && c.containing.label == "Heavy Drill")
+        {
+            drillBag = c;
+        }
+    }
+
+    public void OnTExit(Collider2D collision) {
+        BagBase c;
+        if(collision.TryGetComponent(out c) && drillBag != null && c.containing.label == "Heavy Drill")
+        {
+            c = null;
+        }
+    }
 }

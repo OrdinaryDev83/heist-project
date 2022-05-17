@@ -134,6 +134,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.86274517, g: 0.49803925, b: 0.9921569, a: 1}
+  - Title: Generic Drop Zone
+    CreationDate: 17/05/2022 | 16:23
+    CompletionDate: 
+    HasDetails: 0
+    Details: 
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.6333985, g: 0.8301887, b: 0.2871721, a: 1}
   CompletedTasks:
   - Title: Gadget Inventory
     CreationDate: 08/05/2022 | 14:09
