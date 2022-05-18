@@ -423,6 +423,7 @@ MonoBehaviour:
   throwForce: 25
   selected: 0
   bagImage: {fileID: 6905961184124824057}
+  _collectibles: []
   _gadgetCount: 2
 --- !u!50 &6905961185251311322
 Rigidbody2D:

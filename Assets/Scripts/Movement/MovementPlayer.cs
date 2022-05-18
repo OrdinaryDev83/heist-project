@@ -12,7 +12,7 @@ public class MovementPlayer : MovementBase {
 		inputAxis = Health.dead ? Vector2.zero : new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 	}
 
-	protected virtual void UpdateStep() {
+    protected virtual void UpdateStep() {
 		if (Input.GetKey(KeyCode.LeftShift) && !Anim.isAiming) {
 			step = inputAxis.normalized.magnitude * 2f;
 		} else {

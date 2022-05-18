@@ -14,10 +14,17 @@ public class InteractionHandler : MonoBehaviour {
             IInteractable ib = null;
             if(hit.collider.TryGetComponent(out ib))
                 return ib;
-            if (!hit.collider.isTrigger)
+            if (!hit.collider.isTrigger && IsGOInMask(hit.collider.gameObject, propsLayer))
+            {
                 return null;
+            }
         }
         return null;
+    }
+
+    bool IsGOInMask(GameObject a, LayerMask m)
+    {
+        return (1 >> a.layer & m) != 0;
     }
 
     public HealthHandler GetHealthHandler(HealthHandler our, Vector2 dir, float maxDist) {

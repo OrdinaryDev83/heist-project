@@ -17,22 +17,13 @@ MonoBehaviour:
     CreationDate: 08/05/2022 | 14:15
     CompletionDate: 
     HasDetails: 1
-    Details: '-more responsive
+    Details: '-less circular (when strafing + aiming)
 
       -cops can sprint'
     IsCompleted: 0
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0.49803922, g: 0.6898047, b: 0.99215686, a: 1}
-  - Title: Fix Bag Raycast
-    CreationDate: 17/05/2022 | 18:42
-    CompletionDate: 
-    HasDetails: 1
-    Details: -only works if we aim at the first part of the bag's body
-    IsCompleted: 0
-    IsDeferred: 0
-    IsColored: 1
-    DrawColor: {r: 0.27843136, g: 0.5767961, b: 0.78431374, a: 1}
   - Title: Game Cycles
     CreationDate: 08/05/2022 | 14:18
     CompletionDate: 
@@ -206,6 +197,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 1, g: 0.051886797, b: 0.051886797, a: 1}
+  - Title: Fix Bag Raycast
+    CreationDate: 17/05/2022 | 18:42
+    CompletionDate: 18/05/2022 | 11:44
+    HasDetails: 1
+    Details: -only works if we aim at the first part of the bag's body
+    IsCompleted: 1
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0.27843136, g: 0.5767961, b: 0.78431374, a: 1}
   DeferredTasks:
   - Title: Loadout Selector
     CreationDate: 08/05/2022 | 14:19
