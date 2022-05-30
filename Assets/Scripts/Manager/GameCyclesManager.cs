@@ -28,19 +28,22 @@ public class GameCyclesManager : MonoBehaviour
         StringBuilder sb = new StringBuilder();
         sb.Append("<b>Statistics</b>");
         sb.Append("\n");
-        sb.Append(string.Concat("Bags - ", "<b>$", Utils.FormatNumber(EscapeVan.I.MoneyInVan), "</b>", "x", EscapeVan.I.BagsInVan));
+        sb.Append(string.Concat("Bags - ", "<b>$", Utils.FormatNumber(EscapeVan.I.MoneyInVan), "</b> ", "x", EscapeVan.I.BagsInVan));
         sb.Append("\n");
         sb.Append(string.Concat("Quick Cash - ", "<b>$", Utils.FormatNumber(PlayersManager.QuickMoney), "</b>"));
         sb.Append("\n");
-        sb.Append(string.Concat("Kills - ", "<b>$", Utils.FormatNumber(PlayersManager.Kills), "</b>"));
+        sb.Append(string.Concat("Kills - ", "<b>", Utils.FormatNumber(PlayersManager.Kills), "</b>"));
         sb.Append("\n");
-        sb.Append(string.Concat("Hostages Killed - ", "<b>$", Utils.FormatNumber(PlayersManager.HostageKilled), "</b> -$", Utils.Money_HostagePenalty((int)WaveManager.I.difficulty, PlayersManager.HostageKilled)));
+        string s = "";
+        if (PlayersManager.HostageKilled > 0)
+            s = string.Concat("<color=red>-$", Utils.Money_HostagePenalty((int)WaveManager.I.difficulty, PlayersManager.HostageKilled), "</color>");
+        sb.Append(string.Concat("Hostages Killed - ", "<b>", Utils.FormatNumber(PlayersManager.HostageKilled), "</b>", s));
         sb.Append("\n\n");
         sb.Append("<b>Progression</b>");
         sb.Append("\n");
-        sb.Append(string.Concat("XP - ", "<b>$", Utils.FormatNumber(Utils.ProcessXP(PlayersManager.Kills, (int)WaveManager.I.difficulty, EscapeVan.I.BagsInVan, PlayersManager.HostageKilled)), "</b>"));
+        sb.Append(string.Concat("XP - ", "<b>", Utils.FormatNumber(Utils.ProcessXP(PlayersManager.Kills, (int)WaveManager.I.difficulty, EscapeVan.I.BagsInVan, PlayersManager.HostageKilled)), "</b>"));
         sb.Append("\n");
-        sb.Append(string.Concat("Money - ", "<b>$", Utils.FormatNumber(Utils.ProcessMoney((int)WaveManager.I.difficulty, EscapeVan.I.BagsInVan, PlayersManager.HostageKilled)), "</b>"));
+        sb.Append(string.Concat("Money - ", "<b>$", Utils.FormatNumber(Utils.ProcessMoney((int)WaveManager.I.difficulty, EscapeVan.I.MoneyInVan + PlayersManager.QuickMoney, PlayersManager.HostageKilled)), "</b>"));
         return sb.ToString();
     }
 

@@ -8865,6 +8865,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 978609569499379496, guid: 7f60b356a2ebd404aaa145aaba56f04e, type: 3}
+      propertyPath: uniqueID
+      value: 8987480425406383029
+      objectReference: {fileID: 0}
     - target: {fileID: 978609569499379497, guid: 7f60b356a2ebd404aaa145aaba56f04e, type: 3}
       propertyPath: m_Name
       value: Display Case

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionTime: 5
   containing:
-    label: Cash
+    label: Money
     amount: 500000
   bagPrefab: {fileID: 6332406058632567414, guid: 473910fc7a4769a47ba2d7f0e1797743, type: 3}
   blockingObject: {fileID: 978609569506483743}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 3063570448361647636
+  uniqueID: 7994368442794018468
   updateError: 1
   checkTime: 3600
 --- !u!1 &978609569506483743

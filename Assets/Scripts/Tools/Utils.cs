@@ -4,7 +4,7 @@ public static class Utils
 {
     public static string FormatNumber(this decimal money)
     {
-        return $"{money:nmoney}";
+        return string.Format("{0:n0}", money);
     }
     
     public static int ProcessXP(int kills, int difficulty, int bags, int hostagesKilled)
