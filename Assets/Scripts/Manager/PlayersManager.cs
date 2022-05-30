@@ -7,14 +7,31 @@ public class PlayersManager : MonoBehaviour
     public GameObject playerPrefab;
 
     public Transform[] spawnpoints;
-
+    
+    #region Stats
     private static int _quickMoney;
-
     public static int QuickMoney
     {
         set => _quickMoney = value;
         get => _quickMoney;
     }
+
+    private static int _kills;
+    public static int Kills
+    {
+        set => _kills = value;
+        get => _kills;
+    }
+
+    private static int _hostageKilled;
+
+    public static int HostageKilled
+    {
+        set => _hostageKilled = value;
+        get => _hostageKilled;
+    }
+
+    #endregion
 
     public delegate void OnPlayerSpawnedDelegate(Transform player);
     public static OnPlayerSpawnedDelegate OnPlayerSpawned;

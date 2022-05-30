@@ -16,10 +16,12 @@ public class ObjectiveManager : MonoBehaviour {
 
     private HealthHandlerPlayer _playerHealth;
 
+    private bool _active;
     public static ObjectiveManager I = null;
     private void Awake() {
         I = this;
         PlayersManager.OnPlayerSpawned += OnPlayerSpawned;
+        _active = true;
     }
 
     void OnPlayerSpawned(Transform p)
@@ -27,18 +29,12 @@ public class ObjectiveManager : MonoBehaviour {
         _playerHealth = p.GetComponent<HealthHandlerPlayer>();
     }
 
-    public GameObject deathPanel;
-
-    private void Start() {
-        deathPanel.SetActive(false);
-    }
-
     public float objectiveUpdateRate = 1f;
 
     float _cooldown = 0f;
     private void Update() {
-        if (deathPanel.activeSelf) return;
-
+        if (!_active) return;
+        
         if(_cooldown < 1f) {
             _cooldown += Time.deltaTime * objectiveUpdateRate;
         } else {
@@ -54,10 +50,10 @@ public class ObjectiveManager : MonoBehaviour {
             actualObj++;
         }else if (actualObj >= objs.Length && EvaluateObj(escapeObj)) {
             OnWinLevel();
-        }
-
-        if (_playerHealth.Health <= 0 || (failObjs.Length > 0 && EvaluateObjRecursively(failObjs[0], 0, failObjs))) {
+            _active = false;
+        }else if (_playerHealth.Health <= 0 || (failObjs.Length > 0 && EvaluateObjRecursively(failObjs[0], 0, failObjs))) {
             OnLoseLevel();
+            _active = false;
         }
     }
 
@@ -201,12 +197,13 @@ public class ObjectiveManager : MonoBehaviour {
 
     public void OnWinLevel() {
         Debug.LogWarning("Won!");
+        GameCyclesManager.I.OnSuccess();
     }
 
     void OnLoseLevel() {
         Debug.LogWarning("Lost!");
         PlayerUI.I.SetFailText = _lastAccomplished.label;
-        deathPanel.SetActive(true);
+        GameCyclesManager.I.OnFail();
     }
 
     public void RestartLevel() {

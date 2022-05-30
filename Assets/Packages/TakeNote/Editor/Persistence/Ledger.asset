@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Ledger
   m_EditorClassIdentifier: 
   OutstandingTasks:
+  - Title: Interact even when not aiming
+    CreationDate: 30/05/2022 | 19:13
+    CompletionDate: 
+    HasDetails: 1
+    Details: -please it's so fucking boring
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 0, g: 1, b: 0.008930683, a: 1}
   - Title: Improve Rigidbody Movement
     CreationDate: 08/05/2022 | 14:15
     CompletionDate: 

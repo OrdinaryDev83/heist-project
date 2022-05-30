@@ -1,14 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class EscapeVan : MonoBehaviour {
+public class EscapeVan : MonoBehaviour
+{
+    public static EscapeVan I = null;
+
+    private void Awake()
+    {
+        I = this;
+    }
 
     public List<MovementPlayer> players = new List<MovementPlayer>();
 
-    public int PlayerInVan {
+    public int PlayersInVan {
         get {
             return players.Count;
         }
@@ -17,6 +25,22 @@ public class EscapeVan : MonoBehaviour {
     public int BagsInVan {
         get {
             return bags.Count;
+        }
+    }
+    
+    public int MoneyInVan {
+        get
+        {
+            int sum = 0;
+            foreach (var b in bags)
+            {
+                if (b.containing.label == "Money")
+                {
+                    sum += b.containing.amount;
+                }
+            }
+
+            return sum;
         }
     }
 

@@ -65,7 +65,7 @@ public class PlayerUI : MonoBehaviour
             ammoCount.text = string.Concat(b, "/", a, "/", c);
         }
         objectiveText.text = string.Concat("Objective : ", ObjectiveManager.I.GetCurrentObj().label);
-        moneyText.text = string.Concat(PlayersManager.QuickMoney.ToString(), "$");
+        moneyText.text = Utils.FormatNumber(PlayersManager.QuickMoney + EscapeVan.I.MoneyInVan);
     }
 
     public void SetInteractionText(Vector3 pos, string text) {

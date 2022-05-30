@@ -14,6 +14,14 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private int wave;
 
+    public enum Difficulty
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+    public Difficulty difficulty;
+
     [SerializeField]
     private Transform[] spawnPoints;
     public Transform[] GetSpawnPoints
@@ -133,6 +141,7 @@ public class WaveManager : MonoBehaviour
         if (State == AssaultState.Running)
         {
             killsRemaining -= 1;
+            PlayersManager.Kills++;
             _respawnQueue.Enqueue(Time.time);
         }
     }
