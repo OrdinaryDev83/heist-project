@@ -22,6 +22,15 @@ MonoBehaviour:
     IsDeferred: 0
     IsColored: 1
     DrawColor: {r: 0, g: 1, b: 0.008930683, a: 1}
+  - Title: Interactable Through Walls
+    CreationDate: 31/05/2022 | 00:19
+    CompletionDate: 
+    HasDetails: 1
+    Details: -the raycast starts too far
+    IsCompleted: 0
+    IsDeferred: 0
+    IsColored: 1
+    DrawColor: {r: 1, g: 0.223048, b: 0, a: 1}
   - Title: Improve Rigidbody Movement
     CreationDate: 08/05/2022 | 14:15
     CompletionDate: 
